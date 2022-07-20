@@ -3,15 +3,18 @@ import EmailIcon from '@mui/icons-material/Email';
 import KeyIcon from '@mui/icons-material/Key';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import Button from '../../components/button/Button'
 import './Login.css'
 import Demo from '../../demo/Demo';
+import {useNavigate} from 'react-router-dom'
 
 const Login = () => {
 
     //example//
+    const navigate = useNavigate()
+    
 
-  
-   
+
     const [togle, settogle] = useState(true);
 
     const handlechange = (e) => {
@@ -43,7 +46,7 @@ const Login = () => {
                                     <br />
                                     <div className="form-check form-switch">
                                         {/* <input className="form-check-input" type="checkbox" role="switch" placeholder="" id="flexSwitchCheckChecked" /> */}
-                                        <Demo/>
+                                        <Demo />
                                     </div>
 
                                 </div>
@@ -69,16 +72,15 @@ const Login = () => {
                                         <span disabled className="input-group-text" style={{ background: "white", borderLeft: "0px" }} onClick={() => { settogle(!togle) }}>{togle ? <VisibilityOffOutlinedIcon /> : <VisibilityOutlinedIcon />}</span>
                                     </div>
                                 </div>
-                                <div className='d-flex justify-content-center'>
-                                    <button className="btn btn-primary">login</button>
-
+                                <div className='d-flex justify-content-center' >
+                                    <button onClick={()=>{navigate('/main')}}  style={{border:"none",borderRadius:"5px",padding:'10px 22px'}} title='Login'><h5>Login</h5></button>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div >
 
     )
 }

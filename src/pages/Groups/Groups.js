@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Tabel from '../../components/Tabel/Tabel'
 
 import Searchbar from '../../components/searchbar/Searchbar'
@@ -9,17 +9,25 @@ import Editgroup from '../../components/modals/Editgroup'
 import Deletemodal from '../../components/modals/Deletemodal'
 
 const Groups = () => {
+
+  const [addgroup, setaddgroup] = useState(false)
+
+
+
   return (
     <div>
       <div className='gbtn d-flex'>
-      <Button title="Add Group"/>
-      
+        <Button title="Add Group"
+        onClick={(e)=> setaddgroup(true) }
+        
+        />
+
       </div>
-      <Searchbar/>
-      <Tabel/>
-      {/* <AddGroup/>
-      <Editgroup/> */}
-      <Deletemodal/>
+      <Searchbar />
+      <Tabel />
+      <AddGroup addgroup={addgroup} setaddgroup={setaddgroup} />
+      {/*<Editgroup/> */}
+     {/*  <Deletemodal /> */}
 
 
     </div>

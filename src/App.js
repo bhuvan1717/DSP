@@ -18,6 +18,7 @@ function App() {
 
 
         <Route path='main' element={< Mainbody />} >
+          <Route index element={<Approval />} />
           <Route path='approval' element={<Approval />} />
           <Route path='projects' element={< Projects />} />
           <Route path='groups' element={< Groups />} />

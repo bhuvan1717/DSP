@@ -1,18 +1,33 @@
-import React from 'react'
-import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
+import React,{useState} from 'react'
+import {  Col, Form, Modal, Row} from 'react-bootstrap'
+import Selectusers from './Selectusers'
+import Button from '../button/Button'
 
-const AddGroup = () => {
+
+const AddGroup = (props) => {
+    const{addgroup,setaddgroup}=props
+
+    
+    const [selectuser, setselectuser] = useState(false)
+
+    const handelModel = (e) => {
+        e.preventDefault()
+        setselectuser(true);
+
+    }
+
+
     return (
         <div>
             <Modal
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                show={true}
+                show={addgroup}
             >
-                <Modal.Header closeButton>
+                <Modal.Header onClick={()=>setaddgroup(false)} closeButton >
                     <Modal.Title id="contained-modal-title-vcenter">
-                        New Group
+                        New Group 
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -32,7 +47,9 @@ const AddGroup = () => {
                                 Select User :
                             </Form.Label>
                             <Col>
-                                <Button type="submit">Add Users</Button>
+                                <Button title ='Add Users'
+                                onClick={e => handelModel(e)}
+                                ></Button>
                             </Col>
                         </Form.Group>
 
@@ -81,6 +98,7 @@ const AddGroup = () => {
 
 
             </Modal>
+            <Selectusers selectuser={selectuser} setselectuser={setselectuser} />
         </div>
     )
 }

@@ -1,16 +1,35 @@
-import React from 'react'
-import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Col, Form, Modal, Row } from 'react-bootstrap'
+import Button from '../button/Button'
+import './Addprojectmodal.css'
+import Selectusers from './Selectusers'
 
-const Addprojectmodal = () => {
+
+const Addprojectmodal = (props) => {
+
+    const { show, setshow } = props
+
+
+
+    const [selectuser, setselectuser] = useState(false)
+
+    const handelModel = (e) => {
+        e.preventDefault()
+        setselectuser(true);
+
+    }
+
+
     return (
         <div>
             <Modal
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                show={true}
+                show={show}
+
             >
-                <Modal.Header closeButton>
+                <Modal.Header onClick={() => setshow(false)} closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
                         New Project
                     </Modal.Title>
@@ -40,7 +59,16 @@ const Addprojectmodal = () => {
                                 Select Users :
                             </Form.Label>
                             <Col>
-                                <Button type="submit">Add Users</Button> <Button type="submit">Add Groups</Button>
+                                <div className=' ug d-flex '>
+                                    <div > <Button title='Add User'
+                                        //  onClick={(e)=>setselectuser(true),setshow(false)}
+                                        onClick={e => handelModel(e)}
+
+                                    ></Button></div>
+                                    <div style={{ marginLeft: '5px' }}>  <Button title='Add Groups'></Button></div>
+
+                                </div>
+
                             </Col>
                         </Form.Group>
 
@@ -48,7 +76,7 @@ const Addprojectmodal = () => {
                             <Form.Control as="textarea" rows={3} />
                         </Form.Group>
                         <Modal.Footer>
-                            <Button >Create</Button>
+                            <Button title='Create' ></Button>
                         </Modal.Footer>
                     </Form>
 
@@ -64,7 +92,10 @@ const Addprojectmodal = () => {
 
 
             </Modal>
+            <Selectusers selectuser={selectuser} setselectuser={setselectuser} />
+
         </div>
+
     )
 }
 

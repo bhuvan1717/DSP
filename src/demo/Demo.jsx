@@ -9,11 +9,11 @@ const useStyles = makeStyles({
     padding: "0px"
   },
   switchBase: {
-    color: "#818181",
+    color: "#00385b ",
     padding: "1px",
     "&$checked": {
       "& + $track": {
-        backgroundColor: "#23bf58"
+        backgroundColor: "#00385b"
       }
     }
   },
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
   track: {
     borderRadius: "20px",
-    backgroundColor: "#818181",
+    backgroundColor: "#00385b ",
     opacity: "1 !important",
     "&:after, &:before": {
       color: "white",
@@ -43,7 +43,7 @@ const useStyles = makeStyles({
     }
   },
   checked: {
-    color: "#23bf58 !important",
+    color: "#00385b !important",
     transform: "translateX(46px) !important"
   }
 });
