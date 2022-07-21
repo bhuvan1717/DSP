@@ -1,0 +1,15 @@
+[
+    {
+        "id":"1",
+        "groupID":"GYP003",
+        "groupName":"Dinga"
+    }, {
+        "id":"2",
+        "groupID":"GYP002",
+        "groupName":"Dingi"
+    }, {
+        "id":"3",
+        "groupID":"GYP003",
+        "groupName":"Pinky"
+    }
+]

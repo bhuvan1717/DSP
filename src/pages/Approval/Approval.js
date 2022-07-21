@@ -3,7 +3,7 @@ import Button from '../../components/button/Button'
 import Searchbar from '../../components/searchbar/Searchbar'
 import Tabel from '../../components/Tabel/Tabel'
 import './Approval.css'
-import data   from '../../dummydata/Appdummydata'
+import data   from '../../dummydata/Approvaldata.json'
 
 const Approval = () => {
     console.log(data,"data");
