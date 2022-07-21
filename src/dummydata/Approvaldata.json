@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "userID": "TYD001",
+        "userName": "Dinga",
+        "mailId": "dinga@dummy.com",
+        "status": ""
+    },
+    {
+        "id": "2",
+        "userID": "TYD002",
+        "userName": "Dingi",
+        "mailId": "dingi@dummy.com",
+        "status": ""
+    },
+    {
+        "id": "3",
+        "userID": "TYD003",
+        "userName": "Manga",
+        "mailId": "manga@dummy.com",
+        "status": ""
+    },
+    {
+        "id": "4",
+        "userID": "TYD004",
+        "userName": "Mangi",
+        "mailId": "mangi@dummy.com",
+        "status": ""
+    }
+]

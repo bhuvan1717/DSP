@@ -3,21 +3,27 @@ import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 import "./Table.css"
 
-const Tabel = () => {
-    /* 
-        const [posta, setposta] = useState()
-    
-        const getdata = () => {
-            fetch("https://jsonplaceholder.typicode.com/posts")
-                .then(res => res.json())
-                .then((data) => {
-                    console.log(data)
-                    setposta(data)
-                })
-        }
-    
-    
-        useEffect(() => { getdata() }, []) */
+const Tabel = (props) => {
+    const { data } = props
+    const [tableData, setTableData] = useState([])
+    console.log(data, "123");
+
+    // const [posta, setposta] = useState()
+
+    // const getdata = () => {
+    //     fetch("https://jsonplaceholder.typicode.com/posts")
+    //         .then(res => res.json())
+    //         .then((data) => {
+    //             console.log(data)
+    //             setTableData(data)
+    //         })
+    // }
+
+
+    // useEffect(() => { getdata() }, []) 
+
+    useEffect(() => { data && setTableData(data) }, [])
+
 
     return (
         <div>
@@ -48,13 +54,18 @@ const Tabel = () => {
                         })} 
                         */}
                         </>
-                        <tr >
-                            <td>1</td>
-                            <td>Madan</td>
-                            <td>madan@gmail.com</td>
-                            <td className='' ><button className='ACbtn mx-2' style={{ color: "#27A74A" }} > <CheckIcon  /></button> <button className='ACbtn mx-2 ' style={{ color: "#CE3341", fontWeight: '80px' }} ><ClearIcon  /> </button></td>
-
-                        </tr>
+                        <>
+                            {tableData && tableData.map((item, index) => {
+                                return (
+                                    <tr key={item.id} >
+                                        <td>{item.userID}</td>
+                                        <td>{item.userName}</td>
+                                        <td>{item.mailId}</td>
+                                        <td className='' ><button className='ACbtn mx-2' style={{ color: "#27A74A" }} > <CheckIcon /></button> <button className='ACbtn mx-2 ' style={{ color: "#CE3341", fontWeight: '80px' }} ><ClearIcon /> </button></td>
+                                    </tr>
+                                )
+                            })}
+                        </>
 
 
 
