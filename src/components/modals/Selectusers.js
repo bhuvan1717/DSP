@@ -2,9 +2,11 @@ import React from 'react'
 import { Modal } from 'react-bootstrap'
 import Searchbar from '../searchbar/Searchbar'
 import Button from '../button/Button'
+import Tabel from '../Tabel/Tabel'
 
 const Selectusers = (props) => {
   const{selectuser, setselectuser}=props
+  const title = [ "User Name",""]
   const handelUser=(e)=>{
 
     setselectuser(false)
@@ -26,7 +28,9 @@ const Selectusers = (props) => {
         <Modal.Body>
 
           <Searchbar />
-          <h1> Conditional Rendering Tabel</h1>
+          
+          <Tabel title = {title}/>
+          
 
 
           <Modal.Footer>

@@ -10,6 +10,7 @@ const Projects = () => {
 const [show, setshow] = useState(false)
 
 
+const title = ["Project ID", "Project Name", "Description", "Action"]
 
 
 
@@ -23,7 +24,7 @@ const [show, setshow] = useState(false)
       />
       </div>
       <Searchbar/>
-      <Tabel/>
+      <Tabel title={title}/>
       <Addprojectmodal show={show} setshow={setshow}/>
 
        

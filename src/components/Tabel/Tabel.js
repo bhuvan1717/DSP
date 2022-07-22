@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import "./Table.css"
 
 const Tabel = (props) => {
-    const { data } = props
+    const { data, title } = props
     const [tableData, setTableData] = useState([])
     console.log(data, "123");
 
@@ -31,10 +31,13 @@ const Tabel = (props) => {
                 <table className="table">
                     <thead className="tableheading" >
                         <tr style={{ backgroundColor: '#3A3C51', color: 'white', paddingLeft: "30px", textAlign: "center" }}>
-                            <td >User ID</td>
-                            <td >User Name</td>
-                            <td >Mail ID</td>
-                            <td >Status</td>
+                            {title && title.map(ele => {
+                                return (
+                                    <td >{ele}</td>
+
+                                )
+                            })}
+
 
                         </tr>
                     </thead>

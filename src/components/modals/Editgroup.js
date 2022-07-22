@@ -1,7 +1,10 @@
 import React from 'react'
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
+import Tabel from '../Tabel/Tabel'
 
 const Editgroup = () => {
+    const title = [ "User Name",""]
+
   return (
     <div>
         <Modal
@@ -58,7 +61,8 @@ const Editgroup = () => {
                         </Form.Group>
                        
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                            <h1>Tabel</h1>
+                            <Tabel title={title}/>
+                            
                         </Form.Group>
 
                        

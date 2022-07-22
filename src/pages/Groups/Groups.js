@@ -11,6 +11,7 @@ import Deletemodal from '../../components/modals/Deletemodal'
 const Groups = () => {
 
   const [addgroup, setaddgroup] = useState(false)
+  const title = ["Group Id", "Group Name", "Actions"]
 
 
 
@@ -24,9 +25,9 @@ const Groups = () => {
 
       </div>
       <Searchbar />
-      <Tabel />
+      <Tabel title={title}  />
       <AddGroup addgroup={addgroup} setaddgroup={setaddgroup} />
-      {/*<Editgroup/> */}
+     {/*  <Editgroup/> */}
      {/*  <Deletemodal /> */}
 
 
